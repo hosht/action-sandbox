@@ -1,0 +1,19 @@
+name: Context
+
+on: [push, workflow_dispatch]
+
+jobs:
+  context:
+    name: Check context
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+    timeout-minutes: 3
+
+    steps:
+    - name: echo github context
+      run: |
+        echo "${{ github }}"
+        echo "github.event: ${{ github.event }}"
+        echo "github.ref: ${{ github.ref }}"
+        echo "github.sha: ${{ github.sha }}"
