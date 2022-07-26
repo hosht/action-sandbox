@@ -26,3 +26,7 @@ jobs:
     - name: Expression 3
       if: failure() || cancelled()
       run: echo "Step executed"
+
+    - name: Expression 4
+      if: ${{ failure() }} || ${{ cancelled() }}
+      run: echo "Step executed"
