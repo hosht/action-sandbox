@@ -15,6 +15,9 @@ jobs:
     - name: sleep
       run: sleep 10
 
+    - name: exit
+      run: exit 1
+
     - name: Expression 1
       if: failure()
       run: echo "Step executed"
