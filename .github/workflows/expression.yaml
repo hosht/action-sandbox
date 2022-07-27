@@ -19,6 +19,10 @@ jobs:
     - name: sleep
       run: sleep 10
 
+    - name: Expression 5
+      if: inputs.flag
+      run: echo "Step executed"
+
     - name: exit
       continue-on-error: true
       run: exit 1
@@ -37,8 +41,4 @@ jobs:
 
     - name: Expression 4
       if: ${{ failure() }} || ${{ cancelled() }}
-      run: echo "Step executed"
-
-    - name: Expression 5
-      if: inputs.flag
       run: echo "Step executed"
