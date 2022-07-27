@@ -2,6 +2,10 @@ name: Expression
 
 on:
   workflow_dispatch:
+    inputs:
+      flag:
+        default: false
+        type: boolean
 
 jobs:
   context:
@@ -32,4 +36,8 @@ jobs:
 
     - name: Expression 4
       if: ${{ failure() }} || ${{ cancelled() }}
+      run: echo "Step executed"
+
+    - name: Expression 5
+      if: inputs.flag
       run: echo "Step executed"
