@@ -25,7 +25,10 @@ jobs:
 
     - name: exit
       continue-on-error: true
-      run: exit 1
+      run: exit 0
+
+    - name: run
+      run: echo 'after exit'
 
     - name: Expression 1
       if: failure()
